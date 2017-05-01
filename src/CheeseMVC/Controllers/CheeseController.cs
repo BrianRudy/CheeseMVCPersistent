@@ -92,7 +92,7 @@ namespace CheeseMVC.Controllers
                 .Include(cat => cat.Cheeses)
                 .Single(cat => cat.ID == id);
 
-            ViewBag.title = "Cheese in category: " + theCategory.Name;
+            ViewBag.title = string.Format("Cheeses in category: {0}", theCategory.Name);
 
             return View("Index", theCategory.Cheeses);        
         }
